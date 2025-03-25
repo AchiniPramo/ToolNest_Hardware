@@ -1,0 +1,16 @@
+package lk.ijse.backend.repo;
+
+import lk.ijse.backend.entity.User;
+import lk.ijse.backend.enums.UserRole;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface UserRepository extends JpaRepository<User, String> {
+    User findByEmail(String email);
+    User findByEmailAndRole(String email, UserRole role); // Find by email and role
+    boolean existsByEmail(String email);
+    boolean existsByEmailAndRole(String email, UserRole role); // Check if a user exists by email and role
+    void deleteByEmail(String email);
+    List<User> findByRole(UserRole role); // Find users by role
+}

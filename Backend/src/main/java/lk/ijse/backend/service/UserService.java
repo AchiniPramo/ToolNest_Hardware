@@ -1,4 +1,4 @@
 package lk.ijse.backend.service;
 
-public class UserService {
+public interface UserService {
 }
