@@ -1,10 +1,10 @@
 package lk.ijse.backend.service.impl;
 
-import lk.ijse.backendtoolnest.dto.AuthDTO;
-import lk.ijse.backendtoolnest.entity.User;
-import lk.ijse.backendtoolnest.enums.UserRole;
-import lk.ijse.backendtoolnest.repo.UserRepository;
-import lk.ijse.backendtoolnest.util.JwtUtil;
+import lk.ijse.backend.dto.AuthDTO;
+import lk.ijse.backend.entity.User;
+import lk.ijse.backend.enums.UserRole;
+import lk.ijse.backend.repo.UserRepository;
+import lk.ijse.backend.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

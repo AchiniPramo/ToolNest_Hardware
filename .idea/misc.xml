@@ -5,7 +5,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Backend/pom.xml" />
+        <option value="$PROJECT_DIR$/Frontend/admin/pom.xml" />
+        <option value="$PROJECT_DIR$/Frontend/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Frontend/admin/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager">

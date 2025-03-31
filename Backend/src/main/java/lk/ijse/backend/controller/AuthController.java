@@ -2,6 +2,9 @@ package lk.ijse.backend.controller;
 
 import lk.ijse.backend.dto.AuthDTO;
 import lk.ijse.backend.dto.ResponseDTO;
+import lk.ijse.backend.dto.UserDTO;
+import lk.ijse.backend.service.impl.AuthService;
+import lk.ijse.backend.util.VarList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

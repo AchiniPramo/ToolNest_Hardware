@@ -12,27 +12,32 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String userId;
 
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
 
     @Column(unique = true, nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private String password;
+
     private String phoneNumber;
     private String address;
     private String profilePicture;
 
     @Enumerated(EnumType.STRING)
-    private UserRole role = UserRole.CUSTOMER; // Default role for users
+    private UserRole role;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

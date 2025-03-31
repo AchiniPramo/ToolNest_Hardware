@@ -8,22 +8,17 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
         }
-
-        .dashboard-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .dashboard-container h1 {
+        h1 {
             margin-bottom: 20px;
         }
-
-        .dashboard-container button {
+        button {
             padding: 10px 20px;
             background-color: #dc3545;
             color: #fff;
@@ -31,46 +26,24 @@
             border-radius: 4px;
             cursor: pointer;
         }
-
-        .dashboard-container button:hover {
+        button:hover {
             background-color: #c82333;
         }
     </style>
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<div class="dashboard-container">
-    <h1>Welcome to User Dashboard</h1>
-    <button id="logoutButton">Logout</button>
-</div>
+<h1>Welcome, User!</h1>
+<button id="logoutBtn">Logout</button>
 
 <script>
-    $(document).ready(function () {
-        const token = localStorage.getItem('token');
-        const role = localStorage.getItem('role');
+    // Logout button functionality
+    document.getElementById('logoutBtn').addEventListener('click', function () {
+        // Clear token and role from localStorage
+        localStorage.removeItem('token');
+        localStorage.removeItem('role');
 
-        if (!token || role !== 'USER') {
-            window.location.href = 'login.html';
-        }
-
-        $('#logoutButton').on('click', function () {
-            $.ajax({
-                url: 'http://localhost:8080/api/v1/auth/logout',
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                },
-                success: function () {
-                    localStorage.removeItem('token');
-                    localStorage.removeItem('role');
-                    window.location.href = 'login.html';
-                },
-                error: function () {
-                    alert('Logout failed. Please try again.');
-                }
-            });
-        });
+        // Redirect to the login page
+        window.location.href = 'login.html';
     });
 </script>
 </body>

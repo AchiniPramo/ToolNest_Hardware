@@ -6,6 +6,7 @@ import lk.ijse.backend.entity.User;
 import lk.ijse.backend.enums.UserRole;
 import lk.ijse.backend.repo.UserRepository;
 import lk.ijse.backend.service.UserService;
+import lk.ijse.backend.util.VarList;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -44,14 +45,14 @@ public class UserServiceImpl implements UserService {
     public int saveUser(UserDTO userDTO) {
         if (userRepository.existsByEmail(userDTO.getEmail())) {
             return VarList.Not_Acceptable;
-        } else {
-            // Hash the password before saving
-            userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
-            User user = modelMapper.map(userDTO, User.class);
-            user.setRole(UserRole.CUSTOMER); // Set role to CUSTOMER
-            userRepository.save(user);
-            return VarList.Created;
         }
+
+        User user = modelMapper.map(userDTO, User.class);
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        user.setRole(UserRole.CUSTOMER);
+
+        userRepository.save(user);
+        return VarList.Created;
     }
 
     @Override
@@ -116,7 +117,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO getUserProfile(String email) {
-        User user = userRepository.findByEmailAndRole(email, UserRole.CUSTOMER);
+        User user = userRepository.findByEmail(email);
         return user != null ? modelMapper.map(user, UserDTO.class) : null;
     }
 
