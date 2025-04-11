@@ -445,6 +445,30 @@
             display: none;
         }
 
+        .forgot-password-form {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--light-gray);
+        }
+
         @media (max-width: 576px) {
             .auth-container {
                 margin: 20px auto;
@@ -535,10 +559,10 @@
                         <input type="checkbox" id="rememberMe" />
                         <label for="rememberMe">Remember me</label>
                     </div>
-                    <a href="#" class="forgot-password" id="forgotPasswordLink"
-                    >Forgot password?</a
-                    >
+                    <a href="#" class="forgot-password" id="forgotPasswordLink">Forgot password?</a>
+
                 </div>
+
 
                 <button type="submit" class="btn" id="loginBtn">Sign In</button>
 
@@ -571,6 +595,25 @@
                     </div>
                 </div>
             </form>
+
+            <!-- Forgot Password Form -->
+            <div class="forgot-password-form" id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="resetEmail" class="form-label">Email Address</label>
+                    <input
+                            type="email"
+                            id="resetEmail"
+                            class="form-control"
+                            placeholder="Enter your email address"
+                            required
+                    >
+                    <div class="error-message" id="resetEmailError"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancelResetBtn">Cancel</button>
+                    <button type="button" class="btn" id="requestResetBtn">Reset Password</button>
+                </div>
+            </div>
 
             <!-- Register Form -->
             <form class="auth-form" id="registerForm" enctype="multipart/form-data">
@@ -1073,6 +1116,148 @@
         $(`#${fieldId}`).addClass('error');
         $(`#${fieldId}Error`).text(message).addClass('visible');
     }
+
+    $(document).ready(function() {
+        // Login Form Submission Handler
+        $('#loginForm').on('submit', function(e) {
+            e.preventDefault();
+
+            // Clear only login-specific error messages
+            $('#loginEmailError, #loginPasswordError').text('').removeClass('visible');
+
+            // Get login credentials
+            const email = $('#loginEmail').val().trim();
+            const password = $('#loginPassword').val();
+
+            // Check if forgot password form is visible
+            if ($('#forgotPasswordForm').is(':visible')) {
+                // If forgot password form is open, do not proceed with login
+                return;
+            }
+
+            // Validate login inputs
+            let isValid = true;
+
+            if (!email) {
+                $('#loginEmailError').text('Please enter your email address').addClass('visible');
+                isValid = false;
+            }
+
+            if (!password) {
+                $('#loginPasswordError').text('Please enter your password').addClass('visible');
+                isValid = false;
+            }
+
+            // Proceed with login if inputs are valid
+            if (isValid) {
+                $('#spinnerOverlay').addClass('show');
+                $('#loginBtn').prop('disabled', true);
+
+                $.ajax({
+                    url: "http://localhost:8080/api/v1/auth/authenticate",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ email, password }),
+                    success: function (data) {
+                        if (data.code === 200) {
+                            localStorage.setItem("token", data.data.token);
+                            localStorage.setItem("role", data.data.role);
+
+                            if (data.data.role === "ADMIN") {
+                                window.location.href = "admin-dashboard.html";
+                            } else {
+                                window.location.href = "../index.html";
+                            }
+                        } else {
+                            showAlert('error', data.message || "Login failed");
+                        }
+                    },
+                    error: function(xhr) {
+                        let errorMsg = 'An error occurred. Please try again.';
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMsg = xhr.responseJSON.message;
+                        }
+                        showAlert('error', errorMsg);
+                    },
+                    complete: function() {
+                        $('#spinnerOverlay').removeClass('show');
+                        $('#loginBtn').prop('disabled', false);
+                    }
+                });
+            }
+        });
+
+        // Forgot Password Link Handler
+        $('#forgotPasswordLink').click(function(e) {
+            e.preventDefault();
+
+            // Toggle forgot password form
+            $('#forgotPasswordForm').toggle();
+
+            // Clear any existing login error messages
+            $('#loginEmailError, #loginPasswordError').text('').removeClass('visible');
+        });
+
+        // Cancel Reset Button Handler
+        $('#cancelResetBtn').click(function() {
+            $('#forgotPasswordForm').hide();
+            $('#resetEmail').val('');
+            $('#resetEmailError').text('').removeClass('visible');
+        });
+
+        // Request Reset Button Handler
+        $('#requestResetBtn').click(function() {
+            const email = $('#resetEmail').val().trim();
+            const resetBtn = $(this);
+
+            // Clear previous reset email errors
+            $('#resetEmailError').text('').removeClass('visible');
+
+            // Validate reset email
+            if (!email) {
+                $('#resetEmailError').text('Please enter your email address').addClass('visible');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                $('#resetEmailError').text('Please enter a valid email address').addClass('visible');
+                return;
+            }
+
+            // Proceed with password reset request
+            resetBtn.prop('disabled', true);
+            $('#spinnerOverlay').addClass('show');
+
+            $.ajax({
+                url: 'http://localhost:8080/api/v1/auth/forgot-password',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ email: email }),
+                success: function(response) {
+                    showAlert('success', 'Password reset instructions have been sent to your email.');
+                    $('#forgotPasswordForm').hide();
+                    $('#resetEmail').val('');
+                },
+                error: function(xhr) {
+                    const errorMsg = xhr.responseJSON ?
+                        xhr.responseJSON.message :
+                        'Failed to send password reset instructions. Please try again.';
+                    showAlert('error', errorMsg);
+                },
+                complete: function() {
+                    resetBtn.prop('disabled', false);
+                    $('#spinnerOverlay').removeClass('show');
+                }
+            });
+        });
+
+        // Email Validation Helper
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    });
+
 </script>
 </body>
 </html>

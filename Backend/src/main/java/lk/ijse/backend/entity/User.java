@@ -9,6 +9,8 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -41,4 +43,19 @@ public class User implements Serializable {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Review> reviews = new HashSet<>();
+
+    // Helper method for adding a review
+    public void addReview(Review review) {
+        reviews.add(review);
+        review.setUser(this);
+    }
+
+    // Helper method for removing a review
+    public void removeReview(Review review) {
+        reviews.remove(review);
+        review.setUser(null);
+    }
 }
