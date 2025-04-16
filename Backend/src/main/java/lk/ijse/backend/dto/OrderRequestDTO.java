@@ -10,9 +10,18 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderRequestDTO {
-    // Getters and setters
+    // Address objects for new addresses
     private AddressDTO shippingAddress;
     private AddressDTO billingAddress;
+
+    // IDs for existing addresses
+    private Long shippingAddressId;
+    private Long billingAddressId;
+
+    // Flags for saving addresses
+    private Boolean saveShippingAddress;
+    private Boolean saveBillingAddress;
+
     private String paymentMethod;
 
 }

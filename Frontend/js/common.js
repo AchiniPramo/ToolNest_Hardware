@@ -151,7 +151,7 @@ function loadHeader() {
             <button class="mobile-menu-btn">☰</button>
             <ul class="nav-links">
                 <li><a href="products.html">Shop</a></li>
-                <li><a href="tool-finder.html">Tool Finder</a></li>
+                <li><a href="tyre-finder.html">Tyre Finder</a></li>
                 <li><a href="deals.html">Deals</a></li>
                 <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
                 ${authLinks}
@@ -182,61 +182,69 @@ function loadHeader() {
 }
 
 /**
- * Load footer content
+ * Injects the footer into the page
  */
 function loadFooter() {
-    const footerHtml = `
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-section">
-                    <h3>Shop</h3>
-                    <ul class="footer-links">
-                        <li><a href="products.html">All Products</a></li>
-                        <li><a href="products.html?category=power-tools">Power Tools</a></li>
-                        <li><a href="products.html?category=hand-tools">Hand Tools</a></li>
-                        <li><a href="products.html?category=electrical">Electrical</a></li>
-                        <li><a href="products.html?category=plumbing">Plumbing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Customer Service</h3>
-                    <ul class="footer-links">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="returns.html">Returns & Refunds</a></li>
-                        <li><a href="shipping.html">Shipping Policy</a></li>
-                        <li><a href="warranty.html">Warranty Information</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>My Account</h3>
-                    <ul class="footer-links">
-                        <li><a href="account.html">Account Dashboard</a></li>
-                        <li><a href="orders.html">Order History</a></li>
-                        <li><a href="wishlist.html">Wish List</a></li>
-                        <li><a href="newsletter.html">Newsletter</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>About Toolnest</h3>
-                    <ul class="footer-links">
-                        <li><a href="about.html">Our Story</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="press.html">Press Releases</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
+    const footerElement = document.querySelector('footer');
+    if (!footerElement) return;
+
+    const footer = `
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul class="footer-links">
+                    <li><a href="products.html">All Tires</a></li>
+                    <li><a href="tire-finder.html">By Vehicle</a></li>
+                    <li><a href="products.html?filter=size">By Size</a></li>
+                    <li><a href="products.html?filter=brand">By Brand</a></li>
+                    <li><a href="products.html?filter=offers">Special Offers</a></li>
+                </ul>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; ${new Date().getFullYear()} Toolnest. All rights reserved.</p>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="service-booking.html?service=installation">Tire Installation</a></li>
+                    <li><a href="service-booking.html?service=alignment">Wheel Alignment</a></li>
+                    <li><a href="service-booking.html?service=rotation">Tire Rotation</a></li>
+                    <li><a href="service-booking.html?service=repair">Flat Repair</a></li>
+                    <li><a href="service-booking.html">Service Packages</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html">Shipping Information</a></li>
+                    <li><a href="warranty.html">Returns & Warranty</a></li>
+                    <li><a href="tire-guide.html">Tire Care Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="locations.html">Store Locations</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
             </div>
         </div>
+
+        <div class="footer-bottom">
+            <p>&copy; ${new Date().getFullYear()} TireTrends. All Rights Reserved.</p>
+        </div>
+    </div>
     `;
 
-    // Set footer content
-    $('footer').html(footerHtml);
+    footerElement.innerHTML = footer;
 }
+
 
 /**
  * Update cart count in header
@@ -366,4 +374,89 @@ function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('cart') || '{"totalItems": 0}');
         cartCountElement.text(cart.totalItems || 0);
     }
+}
+
+
+/**
+ * Authentication helper functions
+ * These can be added to a common.js file or included in each page
+ */
+
+// Check if user is authenticated
+function isAuthenticated() {
+    return !!(localStorage.getItem('token') || localStorage.getItem('authToken'));
+}
+
+// Get authentication token (handles both token formats)
+function getToken() {
+    return localStorage.getItem('token') || localStorage.getItem('authToken');
+}
+
+// Get authorization header for API requests
+function getAuthHeader() {
+    return {
+        'Authorization': `Bearer ${getToken()}`
+    };
+}
+
+// Redirect to login page if not authenticated
+function redirectToLogin(returnUrl) {
+    const currentPage = returnUrl || window.location.pathname;
+    window.location.href = 'authentication.html?redirect=' + encodeURIComponent(currentPage);
+}
+
+// Update UI based on authentication status
+function updateAuthUI() {
+    const authLink = document.getElementById('authLink');
+    if (authLink) {
+        if (isAuthenticated()) {
+            authLink.textContent = 'My Account';
+            authLink.href = 'account.html';
+        } else {
+            authLink.textContent = 'Sign In';
+            authLink.href = 'authentication.html';
+        }
+    }
+}
+
+// Standard API request handler with authentication
+function apiRequest(url, method, data) {
+    return new Promise((resolve, reject) => {
+        const options = {
+            url: url,
+            method: method || 'GET',
+            headers: getAuthHeader(),
+            success: function(response) {
+                if (response.code >= 200 && response.code < 300) {
+                    resolve(response.data);
+                } else {
+                    reject({message: response.message || 'Error processing request'});
+                }
+            },
+            error: function(xhr) {
+                // Handle authentication errors
+                if (xhr.status === 401 || xhr.status === 403) {
+                    // Clear potentially invalid tokens
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('authToken');
+                    redirectToLogin();
+                    return;
+                }
+
+                let errorMsg = 'An error occurred. Please try again.';
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    errorMsg = xhr.responseJSON.message;
+                }
+                reject({message: errorMsg, status: xhr.status});
+            }
+        };
+
+        // Add data if provided
+        if (data) {
+            options.contentType = 'application/json';
+            options.data = JSON.stringify(data);
+        }
+
+        $.ajax(options);
+    });
 }

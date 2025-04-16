@@ -2,6 +2,9 @@ package lk.ijse.backend.enums;
 
 public enum OrderStatus {
     PENDING,
+    PAID,
+    PROCESSING,
     SHIPPED,
-    DELIVERED
+    DELIVERED,
+    COMPLETED,CANCELLED,
 }

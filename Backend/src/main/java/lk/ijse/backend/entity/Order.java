@@ -1,8 +1,8 @@
-// Order.java
 package lk.ijse.backend.entity;
 
 import jakarta.persistence.*;
 import lk.ijse.backend.enums.OrderStatus;
+import lk.ijse.backend.enums.PaymentMethod;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -44,43 +44,17 @@ public class Order {
 
     private BigDecimal total;
 
-    private String shippingFirstName;
+    // Replace embedded address fields with relationships to Address entity
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "shipping_address_id")
+    private Address shippingAddress;
 
-    private String shippingLastName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "billing_address_id")
+    private Address billingAddress;
 
-    private String shippingAddress;
-
-    private String shippingAddress2;
-
-    private String shippingCity;
-
-    private String shippingState;
-
-    private String shippingZipCode;
-
-    private String shippingCountry;
-
-    private String shippingPhone;
-
-    private String billingFirstName;
-
-    private String billingLastName;
-
-    private String billingAddress;
-
-    private String billingAddress2;
-
-    private String billingCity;
-
-    private String billingState;
-
-    private String billingZipCode;
-
-    private String billingCountry;
-
-    private String billingPhone;
-
-    private String paymentMethod;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems = new ArrayList<>();

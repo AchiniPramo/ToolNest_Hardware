@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Account Login & Registration | Toolnest</title>
+    <title>Account Login & Registration | ToolNest</title>
     <style>
         * {
             margin: 0;
@@ -501,7 +501,7 @@
     <div class="auth-container">
         <div class="auth-header">
             <div class="auth-logo">
-                <a href="../index.html">Tool<span>Nest</span></a>
+                <a href="../../uploads/index.html">Tool<span>Nest</span></a>
             </div>
             <h1 class="auth-title" id="authTitle">Sign In to Your Account</h1>
             <p class="auth-subtitle" id="authSubtitle">
@@ -984,7 +984,7 @@
                     if (data.data.role === "ADMIN") {
                         window.location.href = "admin-dashboard.html";
                     } else {
-                        window.location.href = "../index.html";
+                        window.location.href = "../../index.html";
                     }
                 } else {
                     showAlert('error', data.message || "Login failed");
