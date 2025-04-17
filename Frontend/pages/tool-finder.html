@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tool Finder | ToolNest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="../js/common.js"></script>
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/tool.css" rel="stylesheet">
+    <link href="../css/mediaquery.css" rel="stylesheet">
+
+
+
+    <!-- animate -->
+    <link rel='stylesheet' href="../css/animate.min.css">
     <style>
         /* Global Styles */
         * {
@@ -556,21 +566,20 @@
 <header>
     <div class="container header-container">
         <a href="../index.html" class="logo">Tool<span>Nest</span></a>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for tools...">
+        <form id="searchForm" class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for Tools...">
             <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
+        </form>
         <button class="mobile-menu-btn">☰</button>
         <ul class="nav-links">
-            <li><a href="../pages/products.html">Shop</a></li>
-            <li><a href="../pages/tool-finder.html">Tool Finder</a></li>
-            <li><a href="../pages/service-booking.html">Services</a></li>
-            <li><a href="../pages/cart.html">Cart (0)</a></li>
-            <li><a href="../pages/authentication.html">Sign In</a></li>
-
+            <li><a href="products.html" class="active">Shop</a></li>
+            <li><a href="tool-finder.html">Tool Finder</a></li>
+            <li><a href="cart.html">Cart (0)</a></li>
+            <li><a href="authentication.html">Sign In</a></li>
         </ul>
     </div>
 </header>
+
 
 <!-- Page Title -->
 <section class="page-title">

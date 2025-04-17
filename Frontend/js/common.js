@@ -194,8 +194,8 @@ function loadFooter() {
             <div class="footer-section">
                 <h3>Shop</h3>
                 <ul class="footer-links">
-                    <li><a href="products.html">All Tires</a></li>
-                    <li><a href="tire-finder.html">By Vehicle</a></li>
+                    <li><a href="products.html">All Tools</a></li>
+                    <li><a href="tool-finder.html">By Vehicle</a></li>
                     <li><a href="products.html?filter=size">By Size</a></li>
                     <li><a href="products.html?filter=brand">By Brand</a></li>
                     <li><a href="products.html?filter=offers">Special Offers</a></li>
@@ -205,9 +205,9 @@ function loadFooter() {
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="service-booking.html?service=installation">Tire Installation</a></li>
+                    <li><a href="service-booking.html?service=installation">Tool Installation</a></li>
                     <li><a href="service-booking.html?service=alignment">Wheel Alignment</a></li>
-                    <li><a href="service-booking.html?service=rotation">Tire Rotation</a></li>
+                    <li><a href="service-booking.html?service=rotation">Tool Rotation</a></li>
                     <li><a href="service-booking.html?service=repair">Flat Repair</a></li>
                     <li><a href="service-booking.html">Service Packages</a></li>
                 </ul>
@@ -220,7 +220,7 @@ function loadFooter() {
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="shipping.html">Shipping Information</a></li>
                     <li><a href="warranty.html">Returns & Warranty</a></li>
-                    <li><a href="tire-guide.html">Tire Care Guide</a></li>
+                    <li><a href="Tool-guide.html">Tool Care Guide</a></li>
                 </ul>
             </div>
 
@@ -237,7 +237,7 @@ function loadFooter() {
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; ${new Date().getFullYear()} TireTrends. All Rights Reserved.</p>
+            <p>&copy; ${new Date().getFullYear()} ToolNest. All Rights Reserved.</p>
         </div>
     </div>
     `;
