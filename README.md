@@ -117,13 +117,6 @@ ToolNest_Hardware/
 
 ---
 
-## 🙏 Acknowledgements
-
-Big thanks to the mentors and the IJSE community for guiding me through this project.  
-ToolNest is the result of my dedication to building full-stack applications and exploring real-world system designs.
-
----
-
 ## 📝 License
 
 This project is for educational and non-commercial use.  
