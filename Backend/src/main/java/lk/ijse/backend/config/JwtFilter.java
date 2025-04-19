@@ -40,7 +40,7 @@ public class JwtFilter extends OncePerRequestFilter {
         }
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            // Check if the token is valid and not blacklisted
+            // Check token is valid and not blacklisted
             if (authService.isTokenValid(jwt)) {
                 UserDetails userDetails = this.authService.loadUserByUsername(username);
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =

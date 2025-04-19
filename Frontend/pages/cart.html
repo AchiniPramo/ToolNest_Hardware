@@ -7,7 +7,6 @@
     <script src="../js/common.js"></script>
     <link href="../css/common.css" rel="stylesheet">
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -613,9 +612,9 @@
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="service-booking.html?service=installation">Tire Installation</a></li>
+                    <li><a href="service-booking.html?service=installation">Tool Installation</a></li>
                     <li><a href="service-booking.html?service=alignment">Wheel Alignment</a></li>
-                    <li><a href="service-booking.html?service=rotation">Tire Rotation</a></li>
+                    <li><a href="service-booking.html?service=rotation">Tool Rotation</a></li>
                     <li><a href="service-booking.html?service=repair">Flat Repair</a></li>
                     <li><a href="service-booking.html">Service Packages</a></li>
                 </ul>
@@ -628,7 +627,7 @@
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="shipping.html">Shipping Information</a></li>
                     <li><a href="warranty.html">Returns & Warranty</a></li>
-                    <li><a href="tire-guide.html">Tire Care Guide</a></li>
+                    <li><a href="Tool-guide.html">Tool Care Guide</a></li>
                 </ul>
             </div>
 
@@ -1185,7 +1184,7 @@
     }
 
     /**
-     * Clear entire cart
+     * Clear enTool cart
      */
     function clearCart() {
         // Check if user is logged in
@@ -1379,9 +1378,8 @@
         }
     }
 
-    /**
-     * Remove promo code from local cart
-     */
+    //  Remove promo code from local cart
+
     function removeLocalPromoCode() {
         cart.discountAmount = 0;
         cart.appliedPromoCode = null;
@@ -1395,9 +1393,8 @@
         showSuccess('Promo code removed.');
     }
 
-    /**
-     * Recalculate cart totals
-     */
+    //  Recalculate cart totals
+
     function recalculateCartTotals() {
         // Reset totals
         cart.totalItems = 0;
@@ -1422,9 +1419,8 @@
         }
     }
 
-    /**
-     * Save cart to localStorage
-     */
+
+     // Save cart to localStorage
     function saveCartToLocalStorage() {
         try {
             localStorage.setItem('cart', JSON.stringify(cart));
@@ -1434,9 +1430,9 @@
         }
     }
 
-    /**
-     * Load recommended products
-     */
+
+     // Load recommended products
+
     function loadRecommendedProducts() {
         const recommendedProductsContainer = document.getElementById('recommendedProducts');
 
@@ -1470,11 +1466,11 @@
             });
     }
 
-    /**
-     * Create a product card element
-     * @param {Object} product Product data
-     * @returns {HTMLElement} Product card element
-     */
+
+     //Create a product card element
+     // @param {Object} product Product data
+     // @returns {HTMLElement} Product card element
+
     function createProductCard(product) {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
@@ -1493,10 +1489,9 @@
         return productCard;
     }
 
-    /**
-     * Update cart count in header
-     * @param {number} count Cart item count
-     */
+
+     // Update cart count in header
+
     function updateCartCount(count) {
         const cartLinks = document.querySelectorAll('a[href="cart.html"]');
         cartLinks.forEach(link => {
@@ -1504,10 +1499,9 @@
         });
     }
 
-    /**
-     * Show success message
-     * @param {string} message Success message text
-     */
+
+    // Show success message
+
     function showSuccess(message) {
         const alert = document.getElementById('alertSuccess');
         if (alert) {
@@ -1521,10 +1515,8 @@
         }
     }
 
-    /**
-     * Show error message
-     * @param {string} message Error message text
-     */
+
+     //Show error message
     function showError(message) {
         const alert = document.getElementById('alertError');
         if (alert) {
@@ -1538,9 +1530,9 @@
         }
     }
 
-    /**
-     * Clear authentication data
-     */
+
+     // Clear authentication data
+
     function clearAuthData() {
         localStorage.removeItem('token');
         localStorage.removeItem('userEmail');
