@@ -35,4 +35,7 @@ public interface ProductService {
     void addReviewToProduct(Review review);
 
     void removeReviewFromProduct(Review review);
+
+    List<ProductDTO> getTopOrderedProducts(int limit);
+
 }

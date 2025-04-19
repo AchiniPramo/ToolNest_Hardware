@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | ToolNest</title>
+    <script src="../js/common.js"></script>
+    <link href="../css/common.css" rel="stylesheet">
     <style>
         /* Global Styles */
         * {
@@ -357,15 +359,29 @@
 <body>
 <!-- Header Section -->
 <header>
-    <!-- Navigation will be injected here by common.js -->
+    <div class="container header-container">
+        <a href="../index.html" class="logo">Tool<span>Nest</span></a>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for tools...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+        <ul class="nav-links">
+            <li><a href="../pages/products.html">Shop</a></li>
+            <li><a href="../pages/cart.html">Cart (0)</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+            <li><a href="../pages/authentication.html">Sign In</a></li>
+
+        </ul>
+    </div>
 </header>
 
 <!-- Page Title -->
 <section class="page-title">
     <div class="container">
-        <h1>About ToolNest /h1>
-        <p>Driving innovation and quality in the ToolNest  since 2010</p>
-    </div>
+        <h1>About ToolNest </h1>
+        <p>Your trusted partner in quality hardware and tools since 2010</p>    </div>
 </section>
 
 <!-- Company Story -->
@@ -373,13 +389,13 @@
     <div class="container">
         <div class="company-story">
             <div class="story-image">
-                <img src="https://via.placeholder.com/600x400?text=Our+Story" alt="ToolNest Company Story">
+                <img src="../images/240_F_228826401_ViyGfoaLlZDuPevijhsoTyaxYVsb1M9M.jpg" alt="ToolNest Company Story">
             </div>
             <div class="story-content">
                 <h3>Our Story</h3>
-                <p>ToolNest was founded in 2010 with a simple mission: to revolutionize the way people shop for and purchase ToolNest egan as a small family-owned business with a single location in Portland, Oregon, driven by a passion for exceptional customer service and quality products.</p>
-                <p>Over the years, we've grown into a nationwide retailer with over 50 locations across the United States, but our core values remain the same. We believe in providing our customers with the perfect combination of premium products, expert advice, and transparent pricing.</p>
-                <p>Our founders, James and Sarah Wheeler, both automotive enthusiasts, recognized that the ToolNest  process was often confusing and frustrating for consumers. They set out to create a more customer-friendly approach, combining traditional service values with modern technology solutions.</p>
+                <p>ToolNest was founded in 2010 with a simple mission: to revolutionize the way people shop for hardware and tools. We began as a small family-owned business with a single location in Portland, Oregon, driven by a passion for exceptional customer service and quality hardware products.</p>
+                <p>Over the years, we've grown into a nationwide retailer with over 50 locations across the United States, but our core values remain the same. We believe in providing our customers with the perfect combination of premium tools, expert advice, and competitive pricing.</p>
+                <p>Our founders, James and Sarah Wheeler, both DIY enthusiasts and professional contractors, recognized that finding the right tools and hardware was often overwhelming for customers. They set out to create a more customer-friendly approach, combining traditional hardware expertise with modern technology solutions.</p>
             </div>
         </div>
     </div>
@@ -395,102 +411,131 @@
 
         <div class="mission-values">
             <h3>Our Mission</h3>
-            <p>"To provide every customer with the perfect ToolNest heir unique needs, delivered with exceptional service, expert advice, and transparent pricing."</p>
+            <p>"To provide every customer with the right tools and hardware solutions for their projects, delivered with expert guidance, quality products, and exceptional service."</p>
 
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">🔍</div>
                     <h4 class="value-title">Quality Focus</h4>
-                    <p>We rigorously test and select only the highest quality ToolNest trusted manufacturers to ensure safety, performance, and durability.</p>
+                    <p>We partner with trusted manufacturers to offer only the highest quality tools and hardware, ensuring durability, reliability, and safety in every product.</p>
                 </div>
 
                 <div class="value-card">
                     <div class="value-icon">🤝</div>
                     <h4 class="value-title">Customer First</h4>
-                    <p>Every decision we make puts the customer's needs and satisfaction at the forefront, creating relationships built on trust and exceptional service.</p>
+                    <p>We prioritize understanding our customers' needs, providing expert advice, and ensuring they have the right tools and knowledge for their projects.</p>
                 </div>
 
                 <div class="value-card">
                     <div class="value-icon">💡</div>
                     <h4 class="value-title">Innovation</h4>
-                    <p>We continuously evolve our services, technology, and processes to improve the ToolNest  experience and stay ahead of industry trends.</p>
+                    <p>We stay ahead of industry trends, constantly updating our inventory with the latest tools and innovative hardware solutions for both DIY and professional needs.</p>
                 </div>
 
                 <div class="value-card">
                     <div class="value-icon">🌍</div>
                     <h4 class="value-title">Sustainability</h4>
-                    <p>We're committed to environmentally responsible practices, including proper ToolNest ing, energy-efficient facilities, and sustainable operations.</p>
+                    <p>We promote eco-friendly tools and practices, offer tool repair services, and maintain energy-efficient facilities to minimize environmental impact.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Team Section -->
 <section class="about-section">
     <div class="container">
         <div class="section-header">
             <h2>Meet Our Team</h2>
-            <p>The dedicated professionals who make ToolNest exceptional</p>
+            <p>The dedicated professionals who make ToolNest Hardware exceptional</p>
         </div>
 
         <div class="team-grid">
             <div class="team-member">
                 <div class="member-image">
-                    <img src="https://via.placeholder.com/300x300?text=James+Wheeler" alt="James Wheeler">
+                    <img src="../assets/images/team/lisa-anderson.jpg alt="Robert Anderson">
                 </div>
                 <div class="member-info">
-                    <h3 class="member-name">James Wheeler</h3>
+                    <h3 class="member-name">Robert Anderson</h3>
                     <div class="member-title">Co-Founder & CEO</div>
-                    <p class="member-bio">James has over 25 years of experience in the automotive industry and is passionate about combining traditional service values with cutting-edge technology.</p>
+                    <p class="member-bio">Robert brings 30 years of hardware retail experience and deep knowledge of industrial tools. His commitment to quality and customer education has made ToolNest a trusted name in hardware.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">tw</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="team-member">
                 <div class="member-image">
-                    <img src="https://via.placeholder.com/300x300?text=Sarah+Wheeler" alt="Sarah Wheeler">
+                    <img src="../assets/images/team/lisa-anderson.jpg" alt="Lisa Anderson">
                 </div>
                 <div class="member-info">
-                    <h3 class="member-name">Sarah Wheeler</h3>
+                    <h3 class="member-name">Lisa Anderson</h3>
                     <div class="member-title">Co-Founder & COO</div>
-                    <p class="member-bio">With a background in logistics and supply chain management, Sarah ensures that ToolNest delivers exceptional operational excellence and customer satisfaction.</p>
+                    <p class="member-bio">Lisa's background in retail operations and inventory management ensures ToolNest maintains the best selection of tools. She leads our expansion strategy and vendor partnerships.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">tw</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="team-member">
                 <div class="member-image">
-                    <img src="https://via.placeholder.com/300x300?text=Michael+Johnson" alt="Michael Johnson">
+                    <img src="../assets/images/team/david-chen.jpg" alt="David Chen">
                 </div>
                 <div class="member-info">
-                    <h3 class="member-name">Michael Johnson</h3>
+                    <h3 class="member-name">David Chen</h3>
                     <div class="member-title">Chief Technology Officer</div>
-                    <p class="member-bio">Michael leads our technology initiatives, overseeing the development of our e-commerce platform and innovative digital solutions for ToolNest .</p>
+                    <p class="member-bio">David created our innovative digital catalog system and online tool recommendation platform. His expertise in tech helps pros and DIYers find the right tools quickly.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">tw</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="team-member">
                 <div class="member-image">
-                    <img src="https://via.placeholder.com/300x300?text=Jennifer+Lee" alt="Jennifer Lee">
+                    <img src="../assets/images/team/maria-rodriguez.jpg" alt="Maria Rodriguez">
                 </div>
                 <div class="member-info">
-                    <h3 class="member-name">Jennifer Lee</h3>
+                    <h3 class="member-name">Maria Rodriguez</h3>
                     <div class="member-title">VP of Customer Experience</div>
-                    <p class="member-bio">Jennifer ensures that every customer interaction exceeds expectations, from online shopping to in-store service to post-purchase support.</p>
+                    <p class="member-bio">Maria oversees our training programs and customer service initiatives. Her team ensures every customer receives expert guidance and finds the perfect tools for their projects.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">tw</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="../assets/images/team/steve-baker.jpg" alt="Steve Baker">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Steve Baker</h3>
+                    <div class="member-title">Head of Tool Services</div>
+                    <p class="member-bio">Steve leads our tool repair and maintenance department. His 20 years of experience ensures our customers receive top-notch service and expert technical support.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="../assets/images/team/amy-wong.jpg" alt="Amy Wong">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Amy Wong</h3>
+                    <div class="member-title">Sustainability Director</div>
+                    <p class="member-bio">Amy spearheads our eco-friendly initiatives and recycling programs. She works to ensure ToolNest leads the industry in sustainable practices and green tool options.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -552,7 +597,56 @@
 
 <!-- Footer Section -->
 <footer>
-    <!-- Footer will be injected here by common.js -->
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Shop Tools</h3>
+                <ul class="footer-links">
+                    <li><a href="../pages/products.html">All Hardware</a></li>
+                    <li><a href="../pages/power-tools.html">Power Tools</a></li>
+                    <li><a href="../pages/hand-tools.html">Hand Tools</a></li>
+                    <li><a href="../pages/products.html?filter=brand">Shop By Brand</a></li>
+                    <li><a href="../pages/products.html?filter=offers">Special Offers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="service-booking.html?service=repair">Tool Repair</a></li>
+                    <li><a href="service-booking.html?service=rental">Tool Rental</a></li>
+                    <li><a href="service-booking.html?service=sharpening">Blade Sharpening</a></li>
+                    <li><a href="service-booking.html?service=custom">Custom Orders</a></li>
+                    <li><a href="service-booking.html">Service Plans</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="warranty.html">Warranty Info</a></li>
+                    <li><a href="returns.html">Returns Policy</a></li>
+                    <li><a href="user-guides.html">Tool Guides</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="locations.html">Store Locations</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">DIY Blog</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ToolNest Hardware. All rights reserved.</p>
+        </div>
+    </div>
 </footer>
 
 <!-- Include API Client -->

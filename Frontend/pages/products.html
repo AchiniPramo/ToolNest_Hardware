@@ -505,29 +505,20 @@
     </style>
 </head>
 <body>
-<!-- Header Section -->
-<header>
-    <div class="container header-container">
-        <a href="../index.html" class="logo">Tool<span>Nest</span></a>
-        <form id="searchForm" class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search for Tools...">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
-        <button class="mobile-menu-btn">☰</button>
-        <ul class="nav-links">
-            <li><a href="products.html" class="active">Shop</a></li>
-            <li><a href="tool-finder.html">Tool Finder</a></li>
-            <li><a href="cart.html">Cart (0)</a></li>
-            <li><a href="authentication.html">Sign In</a></li>
-        </ul>
+
+<!-- Header Container -->
+<div id="headerContainer">
+    <!-- Header will be loaded here -->
+    <div style="text-align: center; padding: 20px; background-color: #222831; color: white;">
+        <i class="fas fa-spinner fa-spin" style="font-size: 24px;"></i>
+        <p>Loading header...</p>
     </div>
-</header>
+</div>
 
 <!-- Page Title -->
 <section class="page-title">
     <div class="container">
         <h1>Shop Tools</h1>
-        <p>Browse our extensive collection of high-quality Tools for all vehicles, driving styles, and budgets</p>
     </div>
 </section>
 
@@ -536,108 +527,6 @@
     <!-- Mobile Filters Toggle Button -->
     <button class="btn mobile-filters-toggle" id="toggleFilters">Show Filters</button>
 
-    <!-- Shop Layout -->
-    <div class="shop-layout">
-        <!-- Filters Sidebar -->
-        <div class="filters-sidebar" id="filtersSidebar">
-            <div class="filter-section">
-                <h3 class="filter-title">Brand</h3>
-                <div class="filter-options" id="brandFilters">
-                    <!-- Brand filters will be populated dynamically -->
-                    <div class="spinner-container">
-                        <div class="spinner"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <h3 class="filter-title">Category</h3>
-                <div class="filter-options" id="categoryFilters">
-                    <!-- Category filters will be populated dynamically -->
-                    <div class="spinner-container">
-                        <div class="spinner"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <h3 class="filter-title">Tool Type</h3>
-                <div class="filter-options" id="typeFilters">
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="type" value="all-season"> All Season
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="type" value="summer"> Summer
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="type" value="winter"> Winter
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="type" value="all-terrain"> All Terrain
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="type" value="performance"> Performance
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <h3 class="filter-title">Tool Size</h3>
-                <div class="filter-options" id="sizeFilters">
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="size" value="195/65R15"> 195/65R15
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="size" value="205/55R16"> 205/55R16
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="size" value="225/45R17"> 225/45R17
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="size" value="235/40R18"> 235/40R18
-                        </label>
-                    </div>
-                    <div class="filter-option">
-                        <label>
-                            <input type="checkbox" name="size" value="265/35R19"> 265/35R19
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <h3 class="filter-title">Price Range</h3>
-                <div class="filter-options">
-                    <div class="price-range">
-                        <input type="number" id="minPrice" placeholder="Min" class="price-input" min="0">
-                        <span>to</span>
-                        <input type="number" id="maxPrice" placeholder="Max" class="price-input" min="0">
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-actions">
-                <button id="applyFilters" class="btn">Apply Filters</button>
-                <button id="resetFilters" class="btn btn-outline">Reset</button>
-            </div>
-        </div>
 
         <!-- Products Container -->
         <div class="products-container">
@@ -674,24 +563,24 @@
     <div class="container">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>Shop</h3>
+                <h3>Shop Tools</h3>
                 <ul class="footer-links">
-                    <li><a href="products.html">All Tools</a></li>
-                    <li><a href="tool-finder.html">By Vehicle</a></li>
-                    <li><a href="products.html?size=195/65R15">By Size</a></li>
-                    <li><a href="products.html?brandId=1">By Brand</a></li>
-                    <li><a href="products.html?sort=price,asc">Special Offers</a></li>
+                    <li><a href="../pages/products.html">All Hardware</a></li>
+                    <li><a href="../pages/power-tools.html">Power Tools</a></li>
+                    <li><a href="../pages/hand-tools.html">Hand Tools</a></li>
+                    <li><a href="../pages/products.html?filter=brand">Shop By Brand</a></li>
+                    <li><a href="../pages/products.html?filter=offers">Special Offers</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="service-booking.html?service=installation">Tool Installation</a></li>
-                    <li><a href="service-booking.html?service=alignment">Wheel Alignment</a></li>
-                    <li><a href="service-booking.html?service=rotation">Tool Rotation</a></li>
-                    <li><a href="service-booking.html?service=repair">Flat Repair</a></li>
-                    <li><a href="service-booking.html">Service Packages</a></li>
+                    <li><a href="service-booking.html?service=repair">Tool Repair</a></li>
+                    <li><a href="service-booking.html?service=rental">Tool Rental</a></li>
+                    <li><a href="service-booking.html?service=sharpening">Blade Sharpening</a></li>
+                    <li><a href="service-booking.html?service=custom">Custom Orders</a></li>
+                    <li><a href="service-booking.html">Service Plans</a></li>
                 </ul>
             </div>
 
@@ -700,9 +589,9 @@
                 <ul class="footer-links">
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="shipping.html">Shipping Information</a></li>
-                    <li><a href="warranty.html">Returns & Warranty</a></li>
-                    <li><a href="Tool-guide.html">Tool Care Guide</a></li>
+                    <li><a href="warranty.html">Warranty Info</a></li>
+                    <li><a href="returns.html">Returns Policy</a></li>
+                    <li><a href="user-guides.html">Tool Guides</a></li>
                 </ul>
             </div>
 
@@ -712,18 +601,78 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="locations.html">Store Locations</a></li>
                     <li><a href="careers.html">Careers</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.html">DIY Blog</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ToolNest. All rights reserved.</p>
+            <p>&copy; 2025 ToolNest Hardware. All rights reserved.</p>
         </div>
     </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/ajax/products.js"></script>
+<script>
+    $(document).ready(function() {
+        // Load the header
+        loadHeader();
+    });
+
+    /**
+     * Load the shared header component
+     */
+    function loadHeader() {
+        // Fetch the header HTML
+        $.ajax({
+            url: 'header.html',  // Path to your header.html file
+            method: 'GET',
+            success: function(data) {
+                // Insert the header HTML
+                $('#headerContainer').html(data);
+
+                // Initialize header functionality
+                // Wait a brief moment to ensure scripts are loaded
+                setTimeout(function() {
+                    if (typeof initHeader === 'function') {
+                        initHeader();
+                    } else {
+                        console.error('Header initialization function not found');
+                    }
+                }, 100);
+
+                // Highlight the current page in navigation
+                highlightCurrentPage();
+            },
+            error: function(xhr, status, error) {
+                console.error('Error loading header:', error);
+                $('#headerContainer').html(`
+                        <div style="background-color: #222831; color: white; padding: 15px 0; text-align: center;">
+                            <div class="container">
+                                <p>Unable to load header. Please refresh the page.</p>
+                                <a href="../index.html" style="color: #D65A31; text-decoration: none; font-weight: bold;">
+                                    Go to Homepage
+                                </a>
+                            </div>
+                        </div>
+                    `);
+            }
+        });
+    }
+
+    /**
+     * Highlight the current page in navigation
+     */
+    function highlightCurrentPage() {
+        // Get current page filename
+        const currentPage = window.location.pathname.split('/').pop().split('?')[0];
+
+        // Add active class to corresponding navigation link in both desktop and mobile views
+        $(`.nav-link[href="${currentPage}"]`).addClass('active');
+        $(`.dropdown-item[href="${currentPage}"]`).addClass('active');
+        $(`.mobile-menu a[href="${currentPage}"]`).addClass('active');
+    }
+</script>
 </body>
 </html>

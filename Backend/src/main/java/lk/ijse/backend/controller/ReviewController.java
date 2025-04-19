@@ -3,6 +3,7 @@ package lk.ijse.backend.controller;
 import lk.ijse.backend.dto.ResponseDTO;
 import lk.ijse.backend.dto.ReviewDTO;
 import lk.ijse.backend.service.ReviewService;
+import lk.ijse.backend.service.impl.ReviewServiceImpl;
 import lk.ijse.backend.util.VarList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 public class ReviewController {
 
     @Autowired
-    private ReviewService reviewService;
+    private ReviewServiceImpl reviewService;
 
     @PreAuthorize("permitAll()")
     @GetMapping("/product/{productId}")

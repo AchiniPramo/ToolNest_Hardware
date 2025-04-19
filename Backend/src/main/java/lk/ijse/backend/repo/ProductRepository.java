@@ -41,4 +41,13 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByCategoryId(Long categoryId);
 
     List<Product> findByBrandId(Long brandId);
+
+    @Query(value = "SELECT p.* FROM products p " +
+            "JOIN order_items oi ON p.id = oi.product_id " +
+            "WHERE p.active = true " +
+            "GROUP BY p.id " +
+            "ORDER BY COUNT(oi.id) DESC " +
+            "LIMIT :limit", nativeQuery = true)
+    List<Product> findTopOrderedProducts(@Param("limit") int limit);
+
 }

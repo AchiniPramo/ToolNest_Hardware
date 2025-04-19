@@ -255,4 +255,19 @@ public class ProductServiceImpl implements ProductService {
         product.removeReview(review);
         updateProductRating(product);
     }
+
+    @Override
+    public List<ProductDTO> getTopOrderedProducts(int limit) {
+        // Join OrderItem and Product tables to find top ordered products
+        List<Product> topProducts = productRepository.findTopOrderedProducts(limit);
+
+        return topProducts.stream()
+                .map(product -> {
+                    ProductDTO dto = modelMapper.map(product, ProductDTO.class);
+                    dto.setCategoryName(product.getCategory().getName());
+                    dto.setBrandName(product.getBrand().getName());
+                    return dto;
+                })
+                .collect(Collectors.toList());
+    }
 }

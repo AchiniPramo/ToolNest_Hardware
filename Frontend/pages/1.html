@@ -380,17 +380,6 @@
             animation: spin 1s ease-in-out infinite;
         }
 
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .carousel-caption h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -566,35 +555,20 @@
     </div>
 </header>
 
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="images/slides/everesthardware_slider_1.jpg" class="d-block w-100" alt="Professional Tools">
-            <div class="carousel-caption d-none d-md-block">
-                <h2>Professional Grade Tools</h2>
-                <p>Quality tools for every project</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="images/slides/everesthardware_slider_2.jpg" class="d-block w-100" alt="Power Tools">
-            <div class="carousel-caption d-none d-md-block">
-                <h2>Power Tools Collection</h2>
-                <p>High-performance tools for professionals</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="images/slides/everesthardware_slider_3.jpg" class="d-block w-100" alt="Hand Tools">
-            <div class="carousel-caption d-none d-md-block">
-                <h2>Premium Hand Tools</h2>
-                <p>Precision and reliability in every tool</p>
-            </div>
-        </div>
-    </div>
 
 
-    <!-- Carousel controls remain the same -->
 
-</div>
+
+<header class="slider_header_section">
+
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-touch="false" data-interval="2000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
         <!-- main caption -->
 
         <!--            <div class="container carousel-caption d-none d-lg-block">-->
@@ -605,12 +579,16 @@
         <!--                    </div>-->
         <div class="clearfix"></div>
         <div class="row mx-auto">
-            <div class="button-container" style="text-align: center; margin: 70px 520px;">
+            <div class="button-container" style="text-align: center; margin: 20px 0;">
                 <a href="#products" class="btn">Shop Now</a>
                 <a href="pages/tool-finder.html" class="btn" style="background-color: var(--dark-gray); margin-left: 10px;">Find My Tool</a>
             </div>
         </div>
-
+    </div>
+    </div>
+    </div>
+    </div>
+</header>
 
 <script>/*!
   * Bootstrap v5.1.3 (https://getbootstrap.com/)
@@ -855,12 +833,12 @@
     <div class="container">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>Shop Tools</h3>
+                <h3>Shop</h3>
                 <ul class="footer-links">
-                    <li><a href="../pages/products.html">All Hardware</a></li>
-                    <li><a href="../pages/power-tools.html">Power Tools</a></li>
-                    <li><a href="../pages/hand-tools.html">Hand Tools</a></li>
-                    <li><a href="../pages/products.html?filter=brand">Shop By Brand</a></li>
+                    <li><a href="../pages/products.html">All Tools</a></li>
+                    <li><a href="../pages/tool-finder.html">By Vehicle</a></li>
+                    <li><a href="../pages/products.html?filter=size">By Size</a></li>
+                    <li><a href="../pages/products.html?filter=brand">By Brand</a></li>
                     <li><a href="../pages/products.html?filter=offers">Special Offers</a></li>
                 </ul>
             </div>
@@ -868,11 +846,11 @@
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="service-booking.html?service=repair">Tool Repair</a></li>
-                    <li><a href="service-booking.html?service=rental">Tool Rental</a></li>
-                    <li><a href="service-booking.html?service=sharpening">Blade Sharpening</a></li>
-                    <li><a href="service-booking.html?service=custom">Custom Orders</a></li>
-                    <li><a href="service-booking.html">Service Plans</a></li>
+                    <li><a href="service-booking.html?service=installation">Tool Installation</a></li>
+                    <li><a href="service-booking.html?service=alignment">Wheel Alignment</a></li>
+                    <li><a href="service-booking.html?service=rotation">Tool Rotation</a></li>
+                    <li><a href="service-booking.html?service=repair">Flat Repair</a></li>
+                    <li><a href="service-booking.html">Service Packages</a></li>
                 </ul>
             </div>
 
@@ -881,9 +859,9 @@
                 <ul class="footer-links">
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="warranty.html">Warranty Info</a></li>
-                    <li><a href="returns.html">Returns Policy</a></li>
-                    <li><a href="user-guides.html">Tool Guides</a></li>
+                    <li><a href="shipping.html">Shipping Information</a></li>
+                    <li><a href="warranty.html">Returns & Warranty</a></li>
+                    <li><a href="Tool-guide.html">Tool Care Guide</a></li>
                 </ul>
             </div>
 
@@ -893,13 +871,13 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="locations.html">Store Locations</a></li>
                     <li><a href="careers.html">Careers</a></li>
-                    <li><a href="blog.html">DIY Blog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ToolNest Hardware. All rights reserved.</p>
+            <p>&copy; 2025 ToolNest. All rights reserved.</p>
         </div>
     </div>
 </footer>

@@ -27,8 +27,11 @@ public class OrderDTO {
     private BigDecimal shippingCost;
     private BigDecimal discountAmount;
     private BigDecimal total;
+
+    // Use AddressDTO instead of embedded fields
     private AddressDTO shippingAddress;
     private AddressDTO billingAddress;
+
     private String paymentMethod;
     private List<OrderItemDTO> orderItems = new ArrayList<>();
     private LocalDateTime createdAt;

@@ -67,7 +67,10 @@ public class WebSecurityConfig {
                                         "/api/v1/reviews/product/**", // Allow access to product reviews
                                         "/api/v1/reviews/checkout/**",
                                         "/api/v1/reviews/order/**",
-                                        "/api/v1/vehicles/**"
+                                        "/api/v1/vehicles/**",
+
+
+                                        "/api/v1/user/profile"
                                 ).permitAll()
                                 .requestMatchers("/api/v1/categories/**").hasAuthority("ADMIN") // Add this line
                                 .requestMatchers("/api/v1/brands/**").hasAuthority("ADMIN") // Add this line

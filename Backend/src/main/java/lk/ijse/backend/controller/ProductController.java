@@ -24,7 +24,7 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
-//    @PreAuthorize("permitAll()")
+    //    @PreAuthorize("permitAll()")
     @GetMapping
     public ResponseEntity<ResponseDTO> getAllProducts(
             @RequestParam(defaultValue = "0") int page,
@@ -75,7 +75,7 @@ public class ProductController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseDTO);
         }
     }
-//    @PreAuthorize("permitAll()")
+    //    @PreAuthorize("permitAll()")
     @GetMapping("/search")
     public ResponseEntity<ResponseDTO> searchProducts(
             @RequestParam(required = false) Long categoryId,
@@ -297,5 +297,25 @@ public class ProductController {
         return PageRequest.of(page, size, Sort.by(sortDirection, sort));
     }
 
+    @GetMapping("/top-ordered")
+    public ResponseEntity<ResponseDTO> getTopOrderedProducts(
+            @RequestParam(defaultValue = "10") int limit) {
+        ResponseDTO responseDTO = new ResponseDTO();
 
+        try {
+            List<ProductDTO> products = productService.getTopOrderedProducts(limit);
+
+            responseDTO.setCode(VarList.OK);
+            responseDTO.setMessage("Top ordered products retrieved successfully");
+            responseDTO.setData(products);
+
+            return ResponseEntity.ok(responseDTO);
+        } catch (Exception e) {
+            responseDTO.setCode(VarList.Internal_Server_Error);
+            responseDTO.setMessage("Error retrieving top ordered products: " + e.getMessage());
+            responseDTO.setData(null);
+
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDTO);
+        }
+    }
 }

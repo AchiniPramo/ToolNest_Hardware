@@ -2,7 +2,7 @@
  * Product Detail Page JavaScript
  *
  * Handles loading and displaying product details, reviews,
- * and cart functionality for the ToolNest e-commerce platform.
+ * and cart functionality for the TyreTrends e-commerce platform.
  */
 
 // Configure API base URL - adjust this for your environment
@@ -132,7 +132,7 @@ function loadProduct(productId) {
                 console.log('Current product set:', currentProduct);
 
                 // Update page title
-                document.title = `${product.name} | ToolNest`;
+                document.title = `${product.name} | TyreTrends`;
 
                 // Update breadcrumb
                 $('#productCategory').text(product.categoryName || 'Products');
@@ -1170,10 +1170,75 @@ function isAuthenticated() {
     return !!localStorage.getItem('token');
 }
 
+
 /**
- * Clear authentication data
+ * Load recommended products
  */
-function clearAuthData() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userEmail');
+function loadRecommendedProducts() {
+    const recommendedProductsContainer = document.getElementById('recommendedProducts');
+
+    // Call API to get featured or best-selling products
+    fetch('http://localhost:8080/api/v1/products?page=0&size=4')
+        .then(response => response.json())
+        .then(data => {
+            if (data.code === 200) {
+                const products = data.data.content || [];
+
+                // Clear loading spinner
+                recommendedProductsContainer.innerHTML = '';
+
+                if (products.length === 0) {
+                    recommendedProductsContainer.innerHTML = '<p>No recommended products available.</p>';
+                    return;
+                }
+
+                // Render each product
+                products.forEach(product => {
+                    const productCard = createProductCard(product);
+                    recommendedProductsContainer.appendChild(productCard);
+                });
+            } else {
+                throw new Error(data.message || 'Failed to load recommended products');
+            }
+        })
+        .catch(error => {
+            console.error('Error loading recommended products:', error);
+            recommendedProductsContainer.innerHTML = '<p>Failed to load recommended products.</p>';
+        });
 }
+
+
+function createProductCard(product) {
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+
+    productCard.innerHTML = `
+        <div class="product-card-image">
+            <img src="${product.imageUrl || 'https://via.placeholder.com/300x300?text=Tyre'}" alt="${product.name}">
+        </div>
+        <div class="product-card-info">
+            <h3 class="product-card-title">${product.name}</h3>
+            <div class="product-card-price">$${(product.price || 0).toFixed(2)}</div>
+            <a href="product-detail.html?id=${product.id}" class="btn">View Details</a>
+        </div>
+    `;
+
+    return productCard;
+}
+
+// Load the header dynamically
+document.addEventListener("DOMContentLoaded", function() {
+    const headerPlaceholder = document.getElementById("headerPlaceholder");
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            headerPlaceholder.innerHTML = data;
+
+            // Reinitialize any JavaScript functionality in the header
+            initHeader();
+            setupEventListeners();
+        })
+        .catch(error => console.error("Error loading header:", error));
+});
+
+

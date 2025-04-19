@@ -191,53 +191,53 @@ function loadFooter() {
     const footer = `
     <div class="container">
         <div class="footer-container">
-            <div class="footer-section">
-                <h3>Shop</h3>
+              <div class="footer-section">
+                <h3>Shop Tools</h3>
                 <ul class="footer-links">
-                    <li><a href="products.html">All Tools</a></li>
-                    <li><a href="tool-finder.html">By Vehicle</a></li>
-                    <li><a href="products.html?filter=size">By Size</a></li>
-                    <li><a href="products.html?filter=brand">By Brand</a></li>
-                    <li><a href="products.html?filter=offers">Special Offers</a></li>
+                    <li><a href="../pages/products.html">All Hardware</a></li>
+                    <li><a href="../pages/power-tools.html">Power Tools</a></li>
+                    <li><a href="../pages/hand-tools.html">Hand Tools</a></li>
+                    <li><a href="../pages/products.html?filter=brand">Shop By Brand</a></li>
+                    <li><a href="../pages/products.html?filter=offers">Special Offers</a></li>
                 </ul>
             </div>
 
-            <div class="footer-section">
+             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="service-booking.html?service=installation">Tool Installation</a></li>
-                    <li><a href="service-booking.html?service=alignment">Wheel Alignment</a></li>
-                    <li><a href="service-booking.html?service=rotation">Tool Rotation</a></li>
-                    <li><a href="service-booking.html?service=repair">Flat Repair</a></li>
-                    <li><a href="service-booking.html">Service Packages</a></li>
+                    <li><a href="service-booking.html?service=repair">Tool Repair</a></li>
+                    <li><a href="service-booking.html?service=rental">Tool Rental</a></li>
+                    <li><a href="service-booking.html?service=sharpening">Blade Sharpening</a></li>
+                    <li><a href="service-booking.html?service=custom">Custom Orders</a></li>
+                    <li><a href="service-booking.html">Service Plans</a></li>
                 </ul>
             </div>
 
-            <div class="footer-section">
+             <div class="footer-section">
                 <h3>Support</h3>
                 <ul class="footer-links">
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="shipping.html">Shipping Information</a></li>
-                    <li><a href="warranty.html">Returns & Warranty</a></li>
-                    <li><a href="Tool-guide.html">Tool Care Guide</a></li>
+                    <li><a href="warranty.html">Warranty Info</a></li>
+                    <li><a href="returns.html">Returns Policy</a></li>
+                    <li><a href="user-guides.html">Tool Guides</a></li>
                 </ul>
             </div>
 
-            <div class="footer-section">
+           <div class="footer-section">
                 <h3>Company</h3>
                 <ul class="footer-links">
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="locations.html">Store Locations</a></li>
                     <li><a href="careers.html">Careers</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.html">DIY Blog</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; ${new Date().getFullYear()} ToolNest. All Rights Reserved.</p>
+            <p>&copy; ${new Date().getFullYear()} 2025 ToolNest Hardware. All rights reserved.</p>
         </div>
     </div>
     `;
@@ -460,3 +460,4 @@ function apiRequest(url, method, data) {
         $.ajax(options);
     });
 }
+

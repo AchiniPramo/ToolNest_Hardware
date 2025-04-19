@@ -442,22 +442,20 @@
 </section>
 
 <!-- Main Content -->
+
 <div class="container">
-    <!-- Alerts -->
     <div class="alert alert-success" id="alertSuccess"></div>
     <div class="alert alert-error" id="alertError"></div>
 
-    <!-- Contact Section -->
     <div class="contact-section">
-        <!-- Contact Info -->
         <div class="contact-info">
             <h2 class="contact-heading">Get in Touch</h2>
 
             <div class="contact-details">
                 <div class="contact-method">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon">🛠️</div>
                     <div class="contact-text">
-                        <h3>Phone</h3>
+                        <h3>Tool Support</h3>
                         <p><a href="tel:+18005557890">1-800-555-7890</a></p>
                     </div>
                 </div>
@@ -465,53 +463,69 @@
                 <div class="contact-method">
                     <div class="contact-icon">✉️</div>
                     <div class="contact-text">
-                        <h3>Email</h3>
-                        <p><a href="mailto:support@ToolNest.com">support@ToolNest.com</a></p>
+                        <h3>Sales & Support</h3>
+                        <p><a href="mailto:sales@toolnest.com">sales@toolnest.com</a></p>
+                    </div>
+                </div>
+
+
+                <div class="contact-method">
+                    <div class="contact-icon">🏪</div>
+                    <div class="contact-text">
+                        <h3>Main Store</h3>
+                        <p>123 Galle Road<br>Colombo 03<br>Sri Lanka</p>
                     </div>
                 </div>
 
                 <div class="contact-method">
-                    <div class="contact-icon">🏢</div>
+                    <div class="contact-icon">📍</div>
                     <div class="contact-text">
-                        <h3>Main Office</h3>
-                        <p>123 Tool Street<br>Automotive District<br>Los Angeles, CA 90001</p>
+                        <h3>Branch Store</h3>
+                        <p>45 Kandy Road<br>Malabe<br>Sri Lanka</p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text">
+                        <h3>Hotline</h3>
+                        <p><a href="tel:+94777123456">077 712 3456</a></p>
                     </div>
                 </div>
             </div>
 
             <div class="business-hours">
-                <h3 class="hours-heading">Business Hours</h3>
+                <h3 class="hours-heading">Store Hours</h3>
                 <table class="hours-table">
                     <tr>
                         <th>Monday - Friday</th>
-                        <td>8:00 AM - 6:00 PM</td>
+                        <td>7:00 AM - 8:00 PM</td>
                     </tr>
                     <tr>
                         <th>Saturday</th>
-                        <td>9:00 AM - 5:00 PM</td>
+                        <td>8:00 AM - 6:00 PM</td>
                     </tr>
                     <tr>
                         <th>Sunday</th>
-                        <td>Closed</td>
+                        <td>9:00 AM - 5:00 PM</td>
                     </tr>
                 </table>
             </div>
 
             <div class="social-media">
-                <h3 class="social-heading">Connect With Us</h3>
+                <h3 class="social-heading">Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#" class="social-icon" aria-label="Facebook">f</a>
-                    <a href="#" class="social-icon" aria-label="Twitter">t</a>
-                    <a href="#" class="social-icon" aria-label="Instagram">i</a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
-                    <a href="#" class="social-icon" aria-label="YouTube">YT</a>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- Contact Form -->
         <div class="contact-form-container">
-            <h2 class="contact-heading">Send Us a Message</h2>
+            <h2 class="contact-heading">How Can We Help?</h2>
 
             <form id="contactForm">
                 <div class="form-row">
@@ -535,15 +549,21 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phone" class="form-label">Phone Number (Optional)</label>
+                    <label for="phone" class="form-label">Phone Number</label>
                     <input type="tel" id="phone" class="form-control">
                     <div class="error-message" id="phoneError"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="subject" class="form-label">Subject</label>
-                    <input type="text" id="subject" class="form-control" required>
-                    <div class="error-message" id="subjectError"></div>
+                    <label for="inquiryType" class="form-label">Inquiry Type</label>
+                    <select id="inquiryType" class="form-control" required>
+                        <option value="">Select an option</option>
+                        <option value="product">Product Information</option>
+                        <option value="service">Tool Service & Repair</option>
+                        <option value="rental">Tool Rental</option>
+                        <option value="bulk">Bulk Orders</option>
+                        <option value="other">Other</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -559,40 +579,37 @@
         </div>
     </div>
 
-    <!-- Map Section -->
     <div class="map-section">
         <div class="map-container">
-            <!-- Map will be loaded here -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27405770525!2d-118.69192047471664!3d34.02016130653294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sca!4v1601414334133!5m2!1sen!2sca" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d178832.2571828566!2d-122.78401665566404!3d45.54287917107872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20OR!5e0!3m2!1sen!2sus!4v1709912051818!5m2!1sen!2sus" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
-    <!-- Locations Section -->
     <div class="locations-section">
-        <h2 class="locations-heading">Our Locations</h2>
+        <h2 class="locations-heading">Our Hardware Stores</h2>
 
         <div class="locations-grid">
             <div class="location-card">
-                <h3 class="location-name">Los Angeles - Main</h3>
-                <p class="location-address">123 Tool Street<br>Automotive District<br>Los Angeles, CA 90001</p>
-                <p class="location-phone">Phone: <a href="tel:+12135557890">213-555-7890</a></p>
-                <p class="location-hours">Mon-Fri: 8AM-6PM<br>Sat: 9AM-5PM<br>Sun: Closed</p>
+                <h3 class="location-name">Portland - Main Store</h3>
+                <p class="location-address">456 Hardware Plaza<br>Industrial District<br>Portland, OR 97201</p>
+                <p class="location-phone">Phone: <a href="tel:+15035557890">503-555-7890</a></p>
+                <p class="location-hours">Mon-Fri: 7AM-8PM<br>Sat: 8AM-6PM<br>Sun: 9AM-5PM</p>
                 <a href="https://maps.google.com" class="location-directions" target="_blank">Get Directions</a>
             </div>
 
             <div class="location-card">
-                <h3 class="location-name">San Francisco</h3>
-                <p class="location-address">456 Wheel Avenue<br>Auto Center Plaza<br>San Francisco, CA 94103</p>
-                <p class="location-phone">Phone: <a href="tel:+14155557890">415-555-7890</a></p>
-                <p class="location-hours">Mon-Fri: 8AM-6PM<br>Sat: 9AM-5PM<br>Sun: Closed</p>
+                <h3 class="location-name">Beaverton Store</h3>
+                <p class="location-address">789 Tool Drive<br>Cedar Hills Crossing<br>Beaverton, OR 97005</p>
+                <p class="location-phone">Phone: <a href="tel:+15035556789">503-555-6789</a></p>
+                <p class="location-hours">Mon-Fri: 7AM-8PM<br>Sat: 8AM-6PM<br>Sun: 9AM-5PM</p>
                 <a href="https://maps.google.com" class="location-directions" target="_blank">Get Directions</a>
             </div>
 
             <div class="location-card">
-                <h3 class="location-name">San Diego</h3>
-                <p class="location-address">789 Tread Boulevard<br>Motor District<br>San Diego, CA 92101</p>
-                <p class="location-phone">Phone: <a href="tel:+16195557890">619-555-7890</a></p>
-                <p class="location-hours">Mon-Fri: 8AM-6PM<br>Sat: 9AM-5PM<br>Sun: Closed</p>
+                <h3 class="location-name">Gresham Store</h3>
+                <p class="location-address">321 Hardware Lane<br>Gresham Station<br>Gresham, OR 97030</p>
+                <p class="location-phone">Phone: <a href="tel:+15035554321">503-555-4321</a></p>
+                <p class="location-hours">Mon-Fri: 7AM-8PM<br>Sat: 8AM-6PM<br>Sun: 9AM-5PM</p>
                 <a href="https://maps.google.com" class="location-directions" target="_blank">Get Directions</a>
             </div>
         </div>
@@ -604,24 +621,24 @@
     <div class="container">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>Shop</h3>
+                <h3>Shop Tools</h3>
                 <ul class="footer-links">
-                    <li><a href="products.html">All Tools</a></li>
-                    <li><a href="tool-finder.html">By Vehicle</a></li>
-                    <li><a href="products.html?filter=size">By Size</a></li>
-                    <li><a href="products.html?filter=brand">By Brand</a></li>
-                    <li><a href="products.html?filter=offers">Special Offers</a></li>
+                    <li><a href="../pages/products.html">All Hardware</a></li>
+                    <li><a href="../pages/power-tools.html">Power Tools</a></li>
+                    <li><a href="../pages/hand-tools.html">Hand Tools</a></li>
+                    <li><a href="../pages/products.html?filter=brand">Shop By Brand</a></li>
+                    <li><a href="../pages/products.html?filter=offers">Special Offers</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="service-booking.html?service=installation">Tool Installation</a></li>
-                    <li><a href="service-booking.html?service=alignment">Wheel Alignment</a></li>
-                    <li><a href="service-booking.html?service=rotation">Tool Rotation</a></li>
-                    <li><a href="service-booking.html?service=repair">Flat Repair</a></li>
-                    <li><a href="service-booking.html">Service Packages</a></li>
+                    <li><a href="service-booking.html?service=repair">Tool Repair</a></li>
+                    <li><a href="service-booking.html?service=rental">Tool Rental</a></li>
+                    <li><a href="service-booking.html?service=sharpening">Blade Sharpening</a></li>
+                    <li><a href="service-booking.html?service=custom">Custom Orders</a></li>
+                    <li><a href="service-booking.html">Service Plans</a></li>
                 </ul>
             </div>
 
@@ -630,9 +647,9 @@
                 <ul class="footer-links">
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="shipping.html">Shipping Information</a></li>
-                    <li><a href="warranty.html">Returns & Warranty</a></li>
-                    <li><a href="Tool-guide.html">Tool Care Guide</a></li>
+                    <li><a href="warranty.html">Warranty Info</a></li>
+                    <li><a href="returns.html">Returns Policy</a></li>
+                    <li><a href="user-guides.html">Tool Guides</a></li>
                 </ul>
             </div>
 
@@ -642,13 +659,13 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="locations.html">Store Locations</a></li>
                     <li><a href="careers.html">Careers</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.html">DIY Blog</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ToolNest. All rights reserved.</p>
+            <p>&copy; 2025 ToolNest Hardware. All rights reserved.</p>
         </div>
     </div>
 </footer>
