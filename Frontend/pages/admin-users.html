@@ -193,45 +193,77 @@
         }
 
         /* Sidebar */
-        .admin-sidebar {
-            grid-area: sidebar;
-            background-color: white;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: var(--primary);
+            color: white;
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--header-height));
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
             padding: 20px 0;
+            transition: all 0.3s ease;
             overflow-y: auto;
+            z-index: 99;
         }
 
-        .sidebar-menu {
+        .sidebar-collapsed .sidebar {
+            left: calc(-1 * var(--sidebar-width));
+        }
+
+        .sidebar-collapsed .main-content {
+            margin-left: 0;
+        }
+
+        .nav-menu {
             list-style: none;
         }
 
-        .menu-header {
-            padding: 10px 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--dark-gray);
+        .nav-item {
+            margin-bottom: 5px;
         }
 
-        .menu-item a {
+        .nav-link {
             display: flex;
             align-items: center;
-            padding: 10px 20px;
-            color: var(--primary);
+            padding: 12px 20px;
+            color: var(--light-gray);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .menu-item a:hover,
-        .menu-item a.active {
-            background-color: var(--light-gray);
-            color: var(--secondary);
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: var(--dark-gray);
+            color: white;
         }
 
-        .menu-icon {
-            margin-right: 10px;
+        .nav-icon {
+            margin-right: 15px;
+            font-size: 18px;
             width: 20px;
             text-align: center;
+        }
+
+        .nav-text {
+            flex: 1;
+        }
+
+        .nav-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .nav-menu-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 15px 20px 5px;
+            letter-spacing: 1px;
         }
 
         /* Main Content */
@@ -730,62 +762,78 @@
     </header>
 
     <!-- Sidebar -->
-    <aside class="admin-sidebar" id="adminSidebar">
-        <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
-            <li class="menu-item">
-                <a href="admin-dashboard.html">
-                    <span class="menu-icon">📊</span>
-                    Dashboard
+    <div class="sidebar" id="sidebar">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="admin-dashboard.html" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
                 </a>
             </li>
 
-            <li class="menu-header">Catalog</li>
-            <li class="menu-item">
-                <a href="admin-products.html">
-                    <span class="menu-icon">🛞</span>
-                    Products
+            <div class="nav-menu-title">Catalog</div>
+
+            <li class="nav-item">
+                <a href="admin-products.html" class="nav-link">
+                    <span class="nav-icon">🛞</span>
+                    <span class="nav-text">Products</span>
                 </a>
             </li>
-            <li class="menu-item">
-                <a href="admin-categories.html">
-                    <span class="menu-icon">📑</span>
-                    Categories
+            <li class="nav-item">
+                <a href="admin-categories.html" class="nav-link">
+                    <span class="nav-icon">📦</span>
+                    <span class="nav-text">Categories</span>
                 </a>
             </li>
-            <li class="menu-item">
-                <a href="admin-brands.html">
-                    <span class="menu-icon">🏷️</span>
-                    Brands
+            <li class="nav-item">
+                <a href="admin-brands.html" class="nav-link active">
+                    <span class="nav-icon">🏷️</span>
+                    <span class="nav-text">Brands</span>
                 </a>
             </li>
 
-            <li class="menu-header">Sales</li>
-            <li class="menu-item">
-                <a href="admin-orders.html">
-                    <span class="menu-icon">📦</span>
-                    Orders
+            <div class="nav-menu-title">Sales</div>
+
+            <li class="nav-item">
+                <a href="admin-orders.html" class="nav-link">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-text">Orders</span>
+                    <span class="nav-badge">8</span>
                 </a>
             </li>
 
-            <li class="menu-header">Customers</li>
-            <li class="menu-item">
-                <a href="admin-users.html" class="active">
-                    <span class="menu-icon">👥</span>
-                    Users
+            <div class="nav-menu-title">Customers</div>
+
+            <li class="nav-item">
+                <a href="admin-customers.html" class="nav-link">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">All Customers</span>
                 </a>
             </li>
 
 
-            <li class="menu-header">System</li>
-            <li class="menu-item">
-                <a href="admin-settings.html">
-                    <span class="menu-icon">⚙️</span>
-                    Settings
+            <div class="nav-menu-title">System</div>
+
+            <li class="nav-item">
+                <a href="admin-users.html" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Admin Users</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="admin-settings.html" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="authentication.html" class="nav-link">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
                 </a>
             </li>
         </ul>
-    </aside>
+    </div>
 
     <!-- Main Content -->
     <main class="admin-main">
