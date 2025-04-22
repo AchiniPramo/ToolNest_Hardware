@@ -18,6 +18,17 @@
 **ToolNest** is a modern hardware shop system that enables shop owners and customers to interact through a seamless digital platform. Built with a Spring Boot backend and a clean, responsive frontend, the system supports product management, customer orders, secure login, payment integration, and real-time dashboards.
 
 ---
+## 🧭 Features
+
+- 🔐 Secure Login with JWT Authentication
+- 👥 Role-Based Access Control (Admin, Customer)
+- 📦 Inventory and Product Management
+- 🛒 Customer Ordering System with Cart
+- 💳 Payment Integration with PayHere Sandbox
+- 📄 Automatic Invoice Generation
+- 📊 Real-Time Dashboards & Statistics
+
+---
 
 ## 🖼️ Screenshots
   ## Customer Pages
@@ -81,18 +92,6 @@
 - Spring Security + JWT Authentication
 - Hibernate (JPA) + MySQL Database
 - PayHere Sandbox for online payments
-
----
-
-## 🧭 Features
-
-- 🔐 Secure Login with JWT Authentication
-- 👥 Role-Based Access Control (Admin, Customer)
-- 📦 Inventory and Product Management
-- 🛒 Customer Ordering System with Cart
-- 💳 Payment Integration with PayHere Sandbox
-- 📄 Automatic Invoice Generation
-- 📊 Real-Time Dashboards & Statistics
 
 ---
 
