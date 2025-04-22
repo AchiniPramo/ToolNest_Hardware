@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Frontend/Frontend.iml" filepath="$PROJECT_DIR$/Frontend/Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ToolNest_Hardware.iml" filepath="$PROJECT_DIR$/ToolNest_Hardware.iml" />
     </modules>
   </component>
 </project>

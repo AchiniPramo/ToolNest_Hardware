@@ -430,13 +430,6 @@
             border-top: 1px solid var(--dark-gray);
         }
 
-        /* Mobile Filters Toggle */
-        .mobile-filters-toggle {
-            display: none;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
         /* Responsive Styles */
         @media (max-width: 768px) {
             .shop-layout {
@@ -502,34 +495,46 @@
             font-size: 24px;
             cursor: pointer;
         }
+
+        /* Header integration adjustments */
+        .page-title {
+            margin-top: 0;
+            padding-top: 40px;
+        }
+
+        .site-header {
+            z-index: 1000;
+        }
+
+        .header-container .nav-links {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
 <!-- Header Container -->
-<header>
-    <div class="container header-container">
-        <a href="../index.html" class="logo">Tool<span>Nest</span></a>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for tools...">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
-        <button class="mobile-menu-btn">☰</button>
-        <ul class="nav-links">
-            <li><a href="../pages/products.html">Shop</a></li>
-            <li><a href="../pages/cart.html">Cart (0)</a></li>
-            <li><a href="../pages/about.html">About Us</a></li>
-            <li><a href="../pages/contact.html">Contact</a></li>
-            <li><a href="../pages/authentication.html">Sign In</a></li>
-
-        </ul>
+<div id="headerContainer">
+    <!-- Header will be loaded here -->
+    <div style="text-align: center; padding: 20px; background-color: #222831; color: white;">
+        <i class="fas fa-spinner fa-spin" style="font-size: 24px;"></i>
+        <p>Loading header...</p>
     </div>
-</header>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 <!-- Page Title -->
 <section class="page-title">
     <div class="container">
-        <h1>Shop Tools</h1>
+        <h1>Hardware Tools</h1>
+        <p>Browse our extensive collection of high-quality hardware tools for all your construction, repair, and DIY needs—suitable for every skill level and budget.</p>
     </div>
 </section>
 
@@ -538,6 +543,108 @@
     <!-- Mobile Filters Toggle Button -->
     <button class="btn mobile-filters-toggle" id="toggleFilters">Show Filters</button>
 
+    <!-- Shop Layout -->
+    <div class="shop-layout">
+        <!-- Filters Sidebar -->
+        <div class="filters-sidebar" id="filtersSidebar">
+            <div class="filter-section">
+                <h3 class="filter-title">Brand</h3>
+                <div class="filter-options" id="brandFilters">
+                    <!-- Brand filters will be populated dynamically -->
+                    <div class="spinner-container">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Category</h3>
+                <div class="filter-options" id="categoryFilters">
+                    <!-- Category filters will be populated dynamically -->
+                    <div class="spinner-container">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Tool Type</h3>
+                <div class="filter-options" id="typeFilters">
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="type" value="all-season"> All Season
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="type" value="summer"> Summer
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="type" value="winter"> Winter
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="type" value="all-terrain"> All Terrain
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="type" value="performance"> Performance
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Tool Size</h3>
+                <div class="filter-options" id="sizeFilters">
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="size" value="195/65R15"> 195/65R15
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="size" value="205/55R16"> 205/55R16
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="size" value="225/45R17"> 225/45R17
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="size" value="235/40R18"> 235/40R18
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="size" value="265/35R19"> 265/35R19
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Price Range</h3>
+                <div class="filter-options">
+                    <div class="price-range">
+                        <input type="number" id="minPrice" placeholder="Min" class="price-input" min="0">
+                        <span>to</span>
+                        <input type="number" id="maxPrice" placeholder="Max" class="price-input" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-actions">
+                <button id="applyFilters" class="btn">Apply Filters</button>
+                <button id="resetFilters" class="btn btn-outline">Reset</button>
+            </div>
+        </div>
 
         <!-- Products Container -->
         <div class="products-container">
@@ -625,6 +732,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/ajax/products.js"></script>
+
 <script>
     $(document).ready(function() {
         // Load the header

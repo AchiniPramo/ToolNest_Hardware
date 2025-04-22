@@ -480,24 +480,46 @@
 </head>
 <body>
 <!-- Header Section -->
-<header>
-    <div class="container header-container">
-        <a href="../index.html" class="logo">Tool<span>Nest</span></a>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for tools...">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
-        <button class="mobile-menu-btn">☰</button>
-        <ul class="nav-links">
-            <li><a href="../pages/products.html">Shop</a></li>
-            <li><a href="../pages/cart.html">Cart (0)</a></li>
-            <li><a href="../pages/about.html">About Us</a></li>
-            <li><a href="../pages/contact.html">Contact</a></li>
-            <li><a href="../pages/authentication.html">Sign In</a></li>
+<div class="header-lower">
+    <div class="container">
+        <nav class="category-nav">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Shop By Category</a>
+                    <div class="dropdown-menu">
+                        <a href="products.html?category=hand-tools" class="dropdown-item">Hand Tools</a>
+                        <a href="products.html?category=power-tools" class="dropdown-item">Power Tools</a>
+                        <a href="products.html?category=electrical" class="dropdown-item">Electrical</a>
+                        <a href="products.html?category=plumbing" class="dropdown-item">Plumbing</a>
+                        <a href="products.html?category=hardware" class="dropdown-item">Hardware & Fasteners</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Brands</a>
+                    <div class="dropdown-menu">
+                        <a href="products.html?brand=dewalt" class="dropdown-item">DeWalt</a>
+                        <a href="products.html?brand=milwaukee" class="dropdown-item">Milwaukee</a>
+                        <a href="products.html?brand=stanley" class="dropdown-item">Stanley</a>
+                        <a href="products.html?brand=makita" class="dropdown-item">Makita</a>
+                        <a href="products.html?brand=bosch" class="dropdown-item">Bosch</a>
+                        <a href="products.html?brands" class="dropdown-item">All Brands</a>
+                    </div>
+                </li>
 
-        </ul>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-</header>
+</div>
+
 
 <!-- Page Title -->
 <section class="page-title">

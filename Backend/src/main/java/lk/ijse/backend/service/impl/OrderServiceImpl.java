@@ -174,32 +174,84 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDTO updateOrderStatus(Long orderId, OrderStatus status) {
-        return null;
+        try {
+            Order order = orderRepository.findById(orderId)
+                    .orElseThrow(() -> new RuntimeException("Order not found with ID: " + orderId));
+
+            // Validate status transition
+            if (order.getStatus() == OrderStatus.CANCELLED && status != OrderStatus.CANCELLED) {
+                throw new RuntimeException("Cannot change status of a cancelled order");
+            }
+
+            order.setStatus(status);
+            order.setUpdatedAt(LocalDateTime.now());
+            order = orderRepository.save(order);
+
+            return mapOrderToDTO(order);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to update order status", e);
+        }
     }
 
     @Override
     public OrderDTO cancelOrder(Long orderId) {
-        return null;
+        try {
+            Order order = orderRepository.findById(orderId)
+                    .orElseThrow(() -> new RuntimeException("Order not found with ID: " + orderId));
+
+            // Check if order can be cancelled
+            if (order.getStatus() != OrderStatus.PENDING && order.getStatus() != OrderStatus.PAID) {
+                throw new RuntimeException("Order cannot be cancelled in its current status");
+            }
+
+            order.setStatus(OrderStatus.CANCELLED);
+            order.setUpdatedAt(LocalDateTime.now());
+            order = orderRepository.save(order);
+
+            return mapOrderToDTO(order);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to cancel order", e);
+        }
     }
 
     @Override
     public Page<OrderDTO> getAllOrders(Pageable pageable) {
-        return null;
+        try {
+            Page<Order> orders = orderRepository.findAll(pageable);
+            return orders.map(this::mapOrderToDTO);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch all orders", e);
+        }
     }
 
     @Override
     public Page<OrderDTO> getOrdersByStatus(OrderStatus status, Pageable pageable) {
-        return null;
+        try {
+            Page<Order> orders = orderRepository.findByStatus(status, pageable);
+            return orders.map(this::mapOrderToDTO);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch orders by status", e);
+        }
     }
 
     @Override
     public Page<OrderDTO> searchOrders(String query, Pageable pageable) {
-        return null;
+        try {
+            Page<Order> orders = orderRepository.searchOrders(query, pageable);
+            return orders.map(this::mapOrderToDTO);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to search orders", e);
+        }
     }
 
     @Override
     public Page<OrderDTO> getOrdersByDateRange(LocalDateTime startDate, LocalDateTime endDate, Pageable pageable) {
-        return null;
+        try {
+            Page<Order> orders = orderRepository.findByDateRange(startDate, endDate, pageable);
+            return orders.map(this::mapOrderToDTO);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch orders by date range", e);
+        }
     }
 
     /**
