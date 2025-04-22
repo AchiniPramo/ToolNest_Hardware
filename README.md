@@ -21,16 +21,20 @@
 
 ## 🖼️ Screenshots
 
-> Replace the paths with real image files from your project in the `screenshots/` folder.
+### **Home Page**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/a82f34a0cd94867d0cd6b8f049ffc0d29b64dfe2/home.PNG)
 
-| Page | Preview |
-|------|---------|
-| Home | ![](screenshots/home.png) |
-| Login | ![](screenshots/login.png) |
-| Admin Dashboard | ![](screenshots/admin-dashboard.png) |
-| Product Management | ![](screenshots/products.png) |
-| Customer Order Page | ![](screenshots/order.png) |
-| Invoice View | ![](screenshots/invoice.png) |
+### **Login Form**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/login.PNG)
+
+### **Admin Brands Page**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-brandPNG.PNG) 
+
+### **Admin Categories Page**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-categories.PNG) 
+
+### **Admin Products Page**    
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-products.PNG)  
 
 ---
 
