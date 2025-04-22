@@ -21,6 +21,15 @@
 
 ## 🖼️ Screenshots
 
+### **Products**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/c8fd70f894dd9b54fa4439a9d9ccc766c9a18825/products.PNG)
+
+### **Add to Cart**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/c8fd70f894dd9b54fa4439a9d9ccc766c9a18825/AddToCart.PNG)
+
+### **View Cart**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/c8fd70f894dd9b54fa4439a9d9ccc766c9a18825/ViewCart.PNG)
+
 ### **Home Page**  
 ![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/a82f34a0cd94867d0cd6b8f049ffc0d29b64dfe2/home.PNG)
 
