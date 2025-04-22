@@ -20,6 +20,8 @@
 ---
 
 ## 🖼️ Screenshots
+  ## Customer Pages
+  
 ### **Home Page**  
 ![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/a82f34a0cd94867d0cd6b8f049ffc0d29b64dfe2/home.PNG)
 
@@ -48,6 +50,11 @@
 ![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/ea365cb67ebd77cae65cbd46995bc5db1b0b1f6f/OrderSummary.PNG)
 
 
+## **Admin Pages** 
+
+### **Admin Dashboard**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/f97831d21667ae7663b2d7b892d571f0c4e5cdd9/Admin-dashboard.PNG) 
+
 ### **Admin Brands Page**   
 ![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-brandPNG.PNG) 
 
@@ -56,6 +63,9 @@
 
 ### **Admin Products Page**    
 ![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-products.PNG)  
+
+### **Admin Management**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/f97831d21667ae7663b2d7b892d571f0c4e5cdd9/Admin-Management.PNG) 
 
 ---
 
