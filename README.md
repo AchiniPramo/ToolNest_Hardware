@@ -87,7 +87,7 @@
 ## 🧭 Features
 
 - 🔐 Secure Login with JWT Authentication
-- 👥 Role-Based Access Control (Admin, Cashier, Customer)
+- 👥 Role-Based Access Control (Admin, Customer)
 - 📦 Inventory and Product Management
 - 🛒 Customer Ordering System with Cart
 - 💳 Payment Integration with PayHere Sandbox
