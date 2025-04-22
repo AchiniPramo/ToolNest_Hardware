@@ -138,7 +138,7 @@ ToolNest_Hardware/
 ## 🎥 Demo Video
 
 🎬 **Watch the Full Demo on YouTube**  
-👉 [Click here to view the demo](https://www.youtube.com/watch?v=your_video_link_here)
+👉 [Click here to view the demo](https://youtu.be/wRwXEhW_y3Y)
 
 ---
 
