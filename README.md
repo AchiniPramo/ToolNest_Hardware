@@ -20,17 +20,52 @@
 ---
 
 ## 🖼️ Screenshots
+  ## Customer Pages
+  
+### **Home Page**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/8c04c92de663fcfc7e3a02e79077e22843aacb09/HomePage1.PNG)
 
-> Replace the paths with real image files from your project in the `screenshots/` folder.
+### **Login Form**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/login.PNG)
 
-| Page | Preview |
-|------|---------|
-| Home | ![](screenshots/home.png) |
-| Login | ![](screenshots/login.png) |
-| Admin Dashboard | ![](screenshots/admin-dashboard.png) |
-| Product Management | ![](screenshots/products.png) |
-| Customer Order Page | ![](screenshots/order.png) |
-| Invoice View | ![](screenshots/invoice.png) |
+### **Products**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/c8fd70f894dd9b54fa4439a9d9ccc766c9a18825/products.PNG)
+
+### **Add to Cart**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/c8fd70f894dd9b54fa4439a9d9ccc766c9a18825/AddToCart.PNG)
+
+### **View Cart**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/c8fd70f894dd9b54fa4439a9d9ccc766c9a18825/ViewCart.PNG)
+
+### **Add Address**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/ea365cb67ebd77cae65cbd46995bc5db1b0b1f6f/AddAddress.PNG)
+
+### **Payment**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/ea365cb67ebd77cae65cbd46995bc5db1b0b1f6f/Payment.PNG)
+
+### **Place Order**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/ea365cb67ebd77cae65cbd46995bc5db1b0b1f6f/PlaceOrder.PNG)
+
+### **Order Summary**  
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/ea365cb67ebd77cae65cbd46995bc5db1b0b1f6f/OrderSummary.PNG)
+
+
+## **Admin Pages** 
+
+### **Admin Dashboard**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/f97831d21667ae7663b2d7b892d571f0c4e5cdd9/Admin-dashboard.PNG) 
+
+### **Admin Brands Page**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-brandPNG.PNG) 
+
+### **Admin Categories Page**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-categories.PNG) 
+
+### **Admin Products Page**    
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/6100e04c04eaf520e5873ad20cd512a8d0f62751/admin-products.PNG)  
+
+### **Admin Management**   
+![image-alt](https://github.com/AchiniPramo/ToolNest_Hardware/blob/f97831d21667ae7663b2d7b892d571f0c4e5cdd9/Admin-Management.PNG) 
 
 ---
 
@@ -52,7 +87,7 @@
 ## 🧭 Features
 
 - 🔐 Secure Login with JWT Authentication
-- 👥 Role-Based Access Control (Admin, Cashier, Customer)
+- 👥 Role-Based Access Control (Admin, Customer)
 - 📦 Inventory and Product Management
 - 🛒 Customer Ordering System with Cart
 - 💳 Payment Integration with PayHere Sandbox
@@ -103,7 +138,7 @@ ToolNest_Hardware/
 ## 🎥 Demo Video
 
 🎬 **Watch the Full Demo on YouTube**  
-👉 [Click here to view the demo](https://www.youtube.com/watch?v=your_video_link_here)
+👉 [Click here to view the demo](https://youtu.be/wRwXEhW_y3Y)
 
 ---
 
